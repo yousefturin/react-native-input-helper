@@ -5,7 +5,7 @@ general helper for formatting different inputs as Iban, Card, Phone number
 ## Installation
 
 ```sh
-npm install react-native-format
+npm install react-native-input-helper
 ```
 
 This module provides utility functions for validating and formatting IBANs, emails, phone numbers, and credit card numbers.
@@ -23,7 +23,7 @@ import {
   FormatIban,
   FormatPhoneNumber,
   FormatCreditCard
-} from "your-module-name";
+} from "react-native-input-helper";
 ```
 
 ## Validation Functions
@@ -142,7 +142,6 @@ Formats a credit card number.
 console.log(FormatCreditCard("4111111111111111"));
 // returns "4111 1111 1111 1111"
 ```
-
 
 ```
 
