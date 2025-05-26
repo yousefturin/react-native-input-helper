@@ -43,7 +43,9 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
     "prepare": "bob build",
-    "release": "release-it"
+    "release": "release-it",
+    "build:bundle": "rollup -c",
+    "size": "npm run build:bundle && size-limit"
   },
   "keywords": [
     "react-native",
@@ -68,6 +70,10 @@
     "@evilmartians/lefthook": "^1.5.0",
     "@react-native/eslint-config": "^0.73.1",
     "@release-it/conventional-changelog": "^9.0.2",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@size-limit/preset-big-lib": "^11.2.0",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
     "commitlint": "^17.0.2",
@@ -81,6 +87,7 @@
     "react-native": "0.76.7",
     "react-native-builder-bob": "^0.37.0",
     "release-it": "^17.10.0",
+    "rollup": "^4.41.1",
     "typescript": "^5.2.2"
   },
   "resolutions": {
@@ -183,5 +190,11 @@
     "languages": "js",
     "type": "library",
     "version": "0.48.1"
-  }
+  },
+  "size-limit": [
+    {
+      "path": "dist/bundle.js",
+      "limit": "10 kB"
+    }
+  ]
 }

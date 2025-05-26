@@ -1,11 +1,12 @@
-import { Format, Validate } from '../src/core/InputHelper';
+import { Format, Validate } from './core/InputHelper';
+
 import type {
   CreditCardProp,
   EmailProp,
   IbanFormatProp,
   IbanProp,
   PhoneNumberProps,
-} from '../src/core/types';
+} from './core/types';
 
 /**
  * Validates an IBAN

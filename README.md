@@ -27,7 +27,7 @@ Unlike other libraries that handle only one input type — or require pulling in
 | Phone number formatting | ✅ All formats               | ❌            | ✅                 | ❌     |
 | IBAN validation         | ✅ All countries             | ❌            | ❌                 | ✅     |
 | Credit card types       | ✅ Visa/Master/Troy/etc      | ✅ (partial)  | ❌                 | ❌     |
-| Bundle size             | 🟢 Lightweight               | ⚠️ Larger     | ⚠️ Larger          | Small |
+| Bundle size             | 🟢 Lightweight (3.73 kB)     | ⚠️ Larger     | ⚠️ Larger          | Small |
 | All-in-one              | ✅ Yes                       | ❌            | ❌                 | ❌     |
 
 ---
