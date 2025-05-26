@@ -1,6 +1,6 @@
 {
   "name": "react-native-input-helper",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "general helper for formatting different inputs as Iban, Card, Phone number",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
