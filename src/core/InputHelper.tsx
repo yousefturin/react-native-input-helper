@@ -1,4 +1,4 @@
-import { isValidLuhn, mod97 } from '../utils';
+import { isValidLuhn, mod97, numericValues } from '../utils';
 import {
   cardPattern,
   emailPattern,
@@ -54,11 +54,33 @@ export class Validate {
     )
       return false;
 
+    if (code[1] === 'CT') return this.uban(iban);
+
     digits = (code[3] + code[1] + code[2]).replace(/[A-Z]/g, function (letter) {
       return (letter.charCodeAt(0) - 55).toString();
     });
     return mod97(digits) === 1;
   }
+
+  static uban(uban: string) {
+    const firstTwoLetters = uban.slice(0, 2).toUpperCase();
+    const countryCodeConverted = firstTwoLetters
+      .split('')
+      .map((letter) => numericValues[letter as keyof typeof numericValues])
+      .join('');
+
+    var code = uban.match(/^CT(\d{2})([A-Z\d]+)$/);
+    if (!code) {
+      return false;
+    }
+
+    var rearranged = code[2] + countryCodeConverted + code[1];
+    var digits = rearranged.replace(/[A-Z]/g, function (letter) {
+      return (letter.charCodeAt(0) - 55).toString();
+    });
+    return mod97(digits) === 1;
+  }
+
   static phoneNumber(phoneNumber: string, countryCode?: string): boolean {
     if (!phoneNumber) return false;
     if (!countryCode) return false;

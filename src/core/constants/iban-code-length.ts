@@ -86,4 +86,5 @@ export const ibanCodeLength = {
   AT: 20,
   AD: 24,
   AL: 28,
+  CT: 28, //CT is For KKTC (Kuzey Kıbrıs Türk Cumhuriyeti) not official IBAN code, but it is used there.
 };
