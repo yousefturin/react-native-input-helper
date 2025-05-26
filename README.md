@@ -68,17 +68,17 @@ Validates a phone number based on the country code.
 
 ```javascript
 console.log(
-  ValidatePhoneNumber({ phoneNumber: "+1 223 456 7890", countryCode: "US" })
+  ValidatePhoneNumber({ phoneNumber: "+90 552 222 22 22", countryCode: "TR" })
 );
 // returns true
 
 console.log(
-  ValidatePhoneNumber({ phoneNumber: "invalid_number", countryCode: "US" })
+  ValidatePhoneNumber({ phoneNumber: "+90 552 222 22", countryCode: "TR" })
 );
 // returns false
 ```
 
-**Note:** This function only validates if the phone number is in the correct format.
+**Note:** This function only validates if the phone number is in the correct format. ValidatePhoneNumber is a simplified and smaller in size, which is based on [google/libphonenumber](https://github.com/google/libphonenumber).
 
 ---
 
@@ -123,12 +123,12 @@ Formats a phone number based on the country code.
 
 ```javascript
 console.log(
-  FormatPhoneNumber({ phoneNumber: "+1 223 456 7890", countryCode: "US" })
+  FormatPhoneNumber({ phoneNumber: "+905522222222", countryCode: "TR" })
 );
-// returns "+1 223-456-7890"
+// returns "+90 552 222 22 22"
 ```
 
-**Note:** This function must take the country code with a `+` sign.
+**Note:** This function must take the country code with a `+` sign. it can be used to format the Phone number while user is typing.
 
 ---
 
