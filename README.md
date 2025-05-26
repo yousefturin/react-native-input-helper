@@ -1,14 +1,12 @@
-# react-native-format
+# react-native-input-helper
 
-general helper for formatting different inputs as Iban, Card, Phone number
+This Library covers Validation and Formatin for user inputs such as Iban, Email, PhoneNumber, CreditCard.
 
 ## Installation
 
 ```sh
 npm install react-native-input-helper
 ```
-
-This module provides utility functions for validating and formatting IBANs, emails, phone numbers, and credit card numbers.
 
 ## Usage
 
@@ -30,7 +28,7 @@ import {
 
 ### `ValidateIban(iban)`
 
-Validates an IBAN.
+Validates a given IBAN.
 
 #### Example:
 
@@ -46,7 +44,7 @@ console.log(ValidateIban("INVALID_IBAN"));
 
 ### `ValidateEmail(email)`
 
-Validates an email.
+Validates a given email.
 
 #### Example:
 
@@ -62,7 +60,7 @@ console.log(ValidateEmail("--@--.com"));
 
 ### `ValidatePhoneNumber({ phoneNumber, countryCode })`
 
-Validates a phone number based on the country code.
+ValidatePhoneNumber is a simplified and smaller in size, which is based on [google/libphonenumber](https://github.com/google/libphonenumber), where it does validate phone number based on given country code.
 
 #### Example:
 
@@ -78,21 +76,21 @@ console.log(
 // returns false
 ```
 
-**Note:** This function only validates if the phone number is in the correct format. ValidatePhoneNumber is a simplified and smaller in size, which is based on [google/libphonenumber](https://github.com/google/libphonenumber).
+**Note:** This function only validates if the phone number is in the correct format.
 
 ---
 
 ### `ValidateCreditCard(cardNumber)`
 
-Validates a credit card number.
+Validates a credit card number. with a **return** `{ type:Visa|MasterCard|AmericanExpress|Discover|JCB|Troy, isValid:true|fal };`
 
 #### Example:
 
 ```javascript
-console.log(ValidateCreditCard("4111111111111111"));
+console.log(ValidateCreditCard("4111111111111111").isValid);
 // returns true
 
-console.log(ValidateCreditCard("1234567890123456"));
+console.log(ValidateCreditCard("1234567890123456").isValid);
 // returns false
 ```
 
@@ -102,7 +100,7 @@ console.log(ValidateCreditCard("1234567890123456"));
 
 ### `FormatIban({ iban, separator })`
 
-Formats an IBAN with a separator.
+Formats an IBAN with a separator, this Method can be called to format user Input onChange.
 
 #### Example:
 

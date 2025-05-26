@@ -35,8 +35,8 @@ export function ValidateEmail(email: EmailProp) {
  * @returns
  * @example
  * ValidatePhoneNumber({
- * phoneNumber: '+1 223 456 7890',
- * countryCode: 'US',
+ * phoneNumber: '+90 552 222 22 22',
+ * countryCode: 'TR',
  * });
  * // returns true
  * @note
@@ -48,6 +48,16 @@ export function ValidatePhoneNumber(PhoneNumberProps: PhoneNumberProps) {
     PhoneNumberProps.countryCode
   );
 }
+/**
+ * Validates a credit card number
+ * @param cardNumber
+ * @returns
+ * @example
+ * ValidateCreditCard('4111111111111111);
+ * // returns {isValid: true, type: 'Visa'}
+ * @note
+ * this function only validated if the phone is in the correct format.
+ */
 export function ValidateCreditCard(cardNumber: CreditCardProp) {
   return Validate.creditCard(cardNumber);
 }
@@ -73,10 +83,10 @@ export function FormatIban(IbanFormatProp: IbanFormatProp) {
  * @returns
  * @example
  * FormatPhoneNumber({
- *  phoneNumber: '+1 223 456 7890',
- * countryCode: 'US',
+ *  phoneNumber: '+905522222222',
+ * countryCode: 'TR',
  * });
- * // returns +1 223-456-7890
+ * // returns +90 552 222 22 22
  * @note
  * This function must take the country key with + sign.
  */
