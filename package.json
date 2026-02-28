@@ -1,8 +1,8 @@
 {
-  "name": "react-native-input-helper",
-  "version": "0.1.4",
-  "description": "general helper for formatting different inputs as Iban, Card, Phone number",
-  "source": "./src/index.tsx",
+  "name": "@yusefturin/valifmt",
+  "version": "1.0.0",
+  "description": "Lightweight utility library for validating and formatting phone numbers, IBANs, credit cards, and emails. Works in any JavaScript or TypeScript environment.",
+  "source": "./src/index.ts",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
   "exports": {
@@ -48,9 +48,17 @@
     "size": "npm run build:bundle && size-limit"
   },
   "keywords": [
+    "validation",
+    "formatter",
+    "iban",
+    "phone-number",
+    "credit-card",
+    "email",
+    "input-helper",
+    "typescript",
     "react-native",
-    "ios",
-    "android"
+    "react",
+    "lightweight"
   ],
   "repository": {
     "type": "git",
@@ -92,10 +100,6 @@
   },
   "resolutions": {
     "@types/react": "^18.2.44"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
   },
   "workspaces": [
     "example"
@@ -185,11 +189,6 @@
         }
       ]
     ]
-  },
-  "create-react-native-library": {
-    "languages": "js",
-    "type": "library",
-    "version": "0.48.1"
   },
   "size-limit": [
     {

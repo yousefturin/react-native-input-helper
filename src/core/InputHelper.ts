@@ -3,7 +3,6 @@ import {
   cardPattern,
   emailPattern,
   ibanCodeLength,
-  phoneCodeLength,
   phoneFormat,
 } from './constants';
 import { ibanReg, ibanReplaceReg } from './constants/iban-pattern';
@@ -84,12 +83,12 @@ export class Validate {
   static phoneNumber(phoneNumber: string, countryCode?: string): boolean {
     if (!phoneNumber) return false;
     if (!countryCode) return false;
-    const country =
-      phoneCodeLength[
-        countryCode.toUpperCase() as keyof typeof phoneCodeLength
-      ];
-    if (!country) return false;
-    return phoneNumber.length === country;
+    const format =
+      phoneFormat[countryCode.toUpperCase() as keyof typeof phoneFormat];
+    if (!format) return false;
+    const expectedDigits = (format.match(/[X\d]/g) || []).length;
+    const inputDigits = phoneNumber.replace(/\D/g, '');
+    return inputDigits.length === expectedDigits;
   }
   static creditCard(creditCard: CreditCardProp): {
     isValid: boolean;
